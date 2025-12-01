@@ -6,9 +6,10 @@ import { useState } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
-    <header className="h-header w-full bg-brand-bg-primary text-white">
+    <header className="w-full bg-brand-bg-primary text-white">
       <div className="mx-auto flex h-header max-w-7xl items-center justify-between px-6">
         <div className="text-xl font-semibold">Smipay</div>
 
@@ -63,18 +64,65 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="bg-brand-bg-primary px-6 pb-6 lg:hidden">
-          <nav className="flex flex-col gap-4 text-sm">
-            <Link href="#" className="hover:opacity-90">
+        <div className="bg-brand-bg-primary border-t border-white/10 lg:hidden">
+          <nav className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-4 text-sm">
+            <Link
+              href="#"
+              className="hover:opacity-90"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Home
             </Link>
-            <Link href="#" className="hover:opacity-90">
-              Services
-            </Link>
-            <Link href="#" className="hover:opacity-90">
+            <div>
+              <button
+                className="flex items-center gap-2 hover:opacity-90 w-full"
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+              >
+                <span>Services</span>
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    isServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {isServicesOpen && (
+                <div className="mt-2 ml-4 flex flex-col gap-2">
+                  <Link
+                    href="#"
+                    className="block py-2 hover:opacity-90"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Airtime & Data
+                  </Link>
+                  <Link
+                    href="#"
+                    className="block py-2 hover:opacity-90"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Bills Payment
+                  </Link>
+                  <Link
+                    href="#"
+                    className="block py-2 hover:opacity-90"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Gift Cards
+                  </Link>
+                </div>
+              )}
+            </div>
+            <Link
+              href="#"
+              className="hover:opacity-90"
+              onClick={() => setIsMenuOpen(false)}
+            >
               About Us
             </Link>
-            <Link href="#" className="hover:opacity-90">
+            <Link
+              href="#"
+              className="hover:opacity-90"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Support
             </Link>
           </nav>
