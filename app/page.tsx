@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import TrustMarquee from "../components/TrustMarquee";
 import WhyOurApp from "../components/home/WhyOurApp";
 import Testimonial from "../components/home/Testimonial";
+import Faq from "../components/home/Faq";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <TrustMarquee />
       <WhyOurApp />
       <Testimonial />
+      <Faq />
       <Footer />
     </div>
   );
