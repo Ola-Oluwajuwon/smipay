@@ -1,0 +1,118 @@
+import Image from "next/image";
+
+export default function Testimonial() {
+  const testimonials = [
+    {
+      id: 1,
+      quote:
+        "Fruitful kind bearing for. It doesn't fruit man open earth the our lights he one seas don't wherein one called, creature lesser spirit shall called.",
+      name: "Oluwapelumi Akindele",
+      reviewPlace: "Play-store review",
+      avatar: "/imgs/avatar.jpg",
+    },
+    {
+      id: 2,
+      quote:
+        "Fruitful kind bearing for. It doesn't fruit man open earth the our lights he one seas don't wherein one called, creature lesser spirit shall called.",
+      name: "Oluwapelumi Akindele",
+      reviewPlace: "Play-store review",
+      avatar: "/imgs/avatar.jpg",
+    },
+    {
+      id: 3,
+      quote:
+        "Fruitful kind bearing for. It doesn't fruit man open earth the our lights he one seas don't wherein one called, creature lesser spirit shall called.",
+      name: "Oluwapelumi Akindele",
+      reviewPlace: "Play-store review",
+      avatar: "/imgs/avatar.jpg",
+    },
+  ];
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
+      {/* Heading and Description */}
+      <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+        <h2 className="text-brand-text-primary text-xl md:text-4xl lg:text-4xl font-semibold mb-4">
+          Users Who Love the Experience
+        </h2>
+        <p className="text-brand-text-secondary text-sm md:text-base">
+          See how the platform is helping users save time, money, and stress
+          every <br className="hidden lg:block" /> day.
+        </p>
+      </div>
+
+      {/* Unified responsive grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={testimonial.id}
+            className={`
+              ${index === 2 ? "md:col-start-1 lg:col-start-auto" : ""}
+            `}
+          >
+            <TestimonialCard
+              quote={testimonial.quote}
+              name={testimonial.name}
+              reviewPlace={testimonial.reviewPlace}
+              avatar={testimonial.avatar}
+              isAlternate={index === 1} // Only second card has alternate position on mobile
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+interface TestimonialCardProps {
+  quote: string;
+  name: string;
+  reviewPlace: string;
+  avatar: string;
+  isAlternate: boolean;
+}
+
+function TestimonialCard({
+  quote,
+  name,
+  reviewPlace,
+  avatar,
+  isAlternate,
+}: TestimonialCardProps) {
+  return (
+    <div className="relative">
+      {/* Avatar positioned over the card border */}
+      <div
+        className={`absolute z-10 w-12 h-12 -top-6 ${
+          isAlternate ? "right-6 md:left-6" : "left-6"
+        }`}
+      >
+        <div className="rounded-full overflow-hidden">
+          <Image
+            src={avatar}
+            alt={name}
+            width={80}
+            height={80}
+            className="object-cover w-12 h-12 rounded-full"
+          />
+        </div>
+      </div>
+
+      {/* Card content */}
+      <div className="border border-gray-200 rounded-lg p-6 pt-8 bg-white shadow-sm mb-8 lg:mb-0">
+        {/* Quote */}
+        <blockquote className="text-brand-text-secondary text-sm leading-relaxed mb-6 md:mb-4">
+          &quot;{quote}&quot;
+        </blockquote>
+
+        {/* Name and review place */}
+        <div className="space-y-1">
+          <h4 className="text-brand-text-primary text-sm font-medium">
+            {name}
+          </h4>
+          <p className="text-brand-text-secondary text-sm">{reviewPlace}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
