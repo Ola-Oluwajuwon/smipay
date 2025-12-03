@@ -9,53 +9,60 @@ import StackingCards, {
 
 const cards = [
   {
-    bgColor: "bg-brand-bg-primary",
-    title: "Feature Title 1",
+    bgColor: "bg-[#F5F1FE]",
+    badge: "Airtime & Data",
+    title: "Always Stay Connected",
     description:
-      "This is a placeholder description for the first feature card. You can edit this text to describe your payment feature in detail.",
-    image: "/imgs/smipay-mockup.svg",
+      "Buy airtime and data anytime without stress. Top up for yourself, friends, or family in seconds, across all major networks in Nigeria. No need to rush out or look for a vendor — fast, reliable, and transparent payments that keep you talking, browsing, and online whenever you need it.",
+    image: "/imgs/stack-card-01.png",
   },
   {
-    bgColor: "bg-[#0015ff]",
-    title: "Feature Title 2",
+    bgColor: "bg-[#FEF3EF]",
+    badge: "Electricity",
+    title: "Power Your Home Smoothly",
     description:
-      "This is a placeholder description for the second feature card. You can edit this text to describe your payment feature in detail.",
-    image: "/imgs/smipay-hero-image.png",
+      "No more darkness or last-minute panic. Pay your electricity bills instantly, whether for home or business, and get your token immediately. We support major electricity providers nationwide, making it easy to stay powered and in control with secure payments and complete transaction history.",
+    image: "/imgs/stack-card-02.png",
   },
   {
-    bgColor: "bg-[#ff5941]",
-    title: "Feature Title 3",
+    bgColor: "bg-[#F0F1F4]",
+    badge: "Cable TV",
+    title: "Entertainment Without Interruptions",
     description:
-      "This is a placeholder description for the third feature card. You can edit this text to describe your payment feature in detail.",
-    image: "/imgs/smipay-mobile-mockup.png",
+      "Renew your cable subscription in a few taps and keep the movies, sports, news, and family programming running. Quick payments, instant activation, and no queues or customer service stress. Just smooth access to your favorite channels, whenever you want.",
+    image: "/imgs/stack-card-03.png",
   },
   {
-    bgColor: "bg-[#1f464d]",
-    title: "Feature Title 4",
+    bgColor: "bg-[#EDFFFF]",
+    badge: "Education",
+    title: "Learning Made Easy",
     description:
-      "This is a placeholder description for the fourth feature card. You can edit this text to describe your payment feature in detail.",
-    image: "/imgs/smipay-mockup.svg",
+      "Pay for school fees and educational services across the country without paperwork or long lines. From WAEC and JAMB to institutional fees and learning platforms, everything happens in one place — secure, fast, and stress-free. Helping students focus on learning while we handle the payments.",
+    image: "/imgs/stack-card-04.png",
   },
   {
-    bgColor: "bg-brand-bg-primary",
-    title: "Feature Title 5",
+    bgColor: "bg-[#E9F2FE]",
+    badge: "Naira Virtual Card",
+    title: "Your Everyday Naira Card",
     description:
-      "This is a placeholder description for the fifth feature card. You can edit this text to describe your payment feature in detail.",
-    image: "/imgs/smipay-hero-image.png",
+      "Make secure online payments within Nigeria without exposing your main bank details. Your Naira virtual card gives you full control — set spending limits, track every transaction, and enjoy safe, seamless payments for shopping, bills, subscriptions, and services across local platforms.",
+    image: "/imgs/stack-card-05.png",
   },
   {
-    bgColor: "bg-[#0015ff]",
-    title: "Feature Title 6",
+    bgColor: "bg-[#F0F7F6]",
+    badge: "Dollar Virtual Card",
+    title: "Your Card for Global Payments",
     description:
-      "This is a placeholder description for the sixth feature card. You can edit this text to describe your payment feature in detail.",
-    image: "/imgs/smipay-mobile-mockup.png",
+      "Shop and pay on international websites with ease. Your Dollar virtual card lets you make global purchases, manage online subscriptions, and handle foreign transactions confidently. Enjoy secure payments, flexible funding, and real-time tracking — all without needing a physical dollar account.",
+    image: "/imgs/stack-card-06.png",
   },
   {
-    bgColor: "bg-[#ff5941]",
-    title: "Feature Title 7",
+    bgColor: "bg-[#F6E4F0]",
+    badge: "Gift cards",
+    title: "Turn Gift Cards into Real Value",
     description:
-      "This is a placeholder description for the seventh feature card. You can edit this text to describe your payment feature in detail.",
-    image: "/imgs/smipay-mockup.svg",
+      "Buy, sell, or redeem gift cards from top international brands at competitive rates. Whether you are sending a gift or converting unused cards into cash, the process is fast, secure, and straightforward. No hidden conditions — just real value in minutes.",
+    image: "/imgs/stack-card-07.png",
   },
 ];
 
@@ -65,49 +72,64 @@ export default function StackCard() {
       {/* Heading and Description */}
       <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
         <h2 className="text-brand-text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mb-4">
-          Discover Our Features
+          All Your Financial Needs In One Place
         </h2>
-        <p className="text-brand-text-secondary text-sm md:text-base">
-          Explore how Smipay makes your financial transactions seamless and
-          effortless.
+        <p className="text-brand-text-secondary text-sm md:text-base max-w-2xl mx-auto">
+          Access a comprehensive range of digital financial services designed to
+          make your life easier and finances smarter.
         </p>
       </div>
 
       {/* Stacking Cards */}
       <div className="relative">
-        <StackingCards totalCards={cards.length} scaleMultiplier={0.03}>
-          {cards.map(({ bgColor, description, image, title }, index) => {
+        <StackingCards totalCards={cards.length} scaleMultiplier={0}>
+          {cards.map(({ bgColor, badge, description, image, title }, index) => {
+            const isImageRight = index % 2 === 0;
+
             return (
               <StackingCardItem
                 key={index}
                 index={index}
-                className="h-[500px] md:h-[600px]"
+                className="h-[550px] md:h-[480px] lg:h-[460px] mb-6 md:mb-8"
               >
                 <div
                   className={cn(
                     bgColor,
-                    "h-full flex-col sm:flex-row px-6 py-8 sm:px-8 sm:py-10 flex w-full rounded-lg mx-auto relative overflow-hidden"
+                    "h-full flex-col items-center py-6 md:py-8 lg:py-10 flex w-full rounded-lg mx-auto relative overflow-hidden gap-4 md:gap-6 lg:gap-8",
+                    isImageRight
+                      ? "sm:flex-row-reverse px-4 md:px-12 lg:px-20"
+                      : "sm:flex-row px-4 md:px-12 lg:px-20"
                   )}
                 >
                   {/* Text Content */}
-                  <div className="flex-1 flex flex-col justify-center z-10 text-white space-y-4 sm:space-y-6">
-                    <h3 className="font-semibold text-xl sm:text-2xl md:text-3xl">
+                  <div className="flex-1 flex flex-col justify-center z-10 space-y-3 md:space-y-4 lg:space-y-6 sm:px-0">
+                    <div className="inline-flex items-center justify-center sm:justify-start w-fit px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-brand-bg-primary text-white text-xs md:text-sm mb-3 md:mb-4 lg:mb-5">
+                      {badge}
+                    </div>
+                    <h3 className="font-semibold text-lg md:text-xl lg:text-2xl xl:text-3xl text-brand-text-primary">
                       {title}
                     </h3>
-                    <p className="text-sm sm:text-base leading-relaxed opacity-90">
+                    <p className="text-xs md:text-sm leading-relaxed text-brand-text-secondary">
                       {description}
                     </p>
                   </div>
 
                   {/* Image */}
-                  <div className="w-full sm:w-1/2 flex items-center justify-center mt-6 sm:mt-0">
-                    <div className="relative w-full aspect-square sm:aspect-auto sm:h-full max-w-[280px] sm:max-w-none">
+                  <div
+                    className={cn(
+                      "w-full sm:w-1/2 flex items-center mt-2 md:mt-6 sm:mt-0",
+                      isImageRight
+                        ? "justify-center sm:justify-start"
+                        : "justify-center sm:justify-end"
+                    )}
+                  >
+                    <div className="relative w-[280px] h-[280px] md:w-[320px] md:h-80 lg:w-[350px] lg:h-[350px]">
                       <Image
                         src={image}
                         alt={title}
-                        className="object-contain"
+                        className="object-contain rounded-sm"
                         fill
-                        sizes="(max-width: 640px) 280px, 50vw"
+                        sizes="(max-width: 768px) 280px, (max-width: 1024px) 320px, 350px"
                       />
                     </div>
                   </div>
