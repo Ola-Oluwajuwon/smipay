@@ -10,7 +10,7 @@ export default function TermsOfServicePage() {
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden">
         {/* Desktop Banner */}
-        <div className="hidden md:block relative h-[240px] w-full">
+        <div className="hidden md:block relative h-60 w-full">
           <Image
             src="/svgs/heros/policy-banner.svg"
             alt="Terms of Service Banner"
@@ -51,12 +51,12 @@ export default function TermsOfServicePage() {
         <div className="mx-auto max-w-4xl px-6">
           <div className="prose prose-slate max-w-none">
             <p className="text-brand-text-secondary leading-relaxed">
-              Welcome to Smipay. These Terms of Service ("Terms") govern your
-              access to and use of the Smipay mobile application, website, and
-              related services ("Services"). By downloading, accessing, or using
-              Smipay, you agree to be bound by these Terms. Please read them
-              carefully. If you do not agree to any part of these Terms, you
-              should not use Smipay.
+              Welcome to Smipay. These Terms of Service (&quot;Terms&quot;)
+              govern your access to and use of the Smipay mobile application,
+              website, and related services (&quot;Services&quot;). By
+              downloading, accessing, or using Smipay, you agree to be bound by
+              these Terms. Please read them carefully. If you do not agree to
+              any part of these Terms, you should not use Smipay.
             </p>
 
             <h2 className="text-2xl font-bold text-brand-text-primary mt-8 mb-4">
@@ -123,7 +123,7 @@ export default function TermsOfServicePage() {
                 Interfere with the security or functionality of the Services.
               </li>
               <li>
-                Attempt to access other users' information without
+                Attempt to access other users&apos; information without
                 authorization.
               </li>
               <li>
@@ -306,9 +306,9 @@ export default function TermsOfServicePage() {
               <li>Indirect, incidental, or consequential damages</li>
             </ul>
             <p className="text-brand-text-secondary leading-relaxed mt-3">
-              Smipay's total liability for any claim relating to the Services
-              will not exceed the amount you paid for the transaction in
-              question.
+              Smipay&apos;s total liability for any claim relating to the
+              Services will not exceed the amount you paid for the transaction
+              in question.
             </p>
 
             <h2 className="text-2xl font-bold text-brand-text-primary mt-8 mb-4">

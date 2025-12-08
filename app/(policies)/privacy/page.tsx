@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden">
         {/* Desktop Banner */}
-        <div className="hidden md:block relative h-[240px] w-full">
+        <div className="hidden md:block relative h-60 w-full">
           <Image
             src="/svgs/heros/policy-banner.svg"
             alt="Privacy Policy Banner"
@@ -51,11 +51,11 @@ export default function PrivacyPolicyPage() {
         <div className="mx-auto max-w-4xl px-6">
           <div className="prose prose-slate max-w-none">
             <p className="text-brand-text-secondary leading-relaxed">
-              Smipay ("we", "our", "us") is committed to protecting your
-              personal information and respecting your privacy. This Privacy
-              Policy explains how we collect, use, store, and protect your data
-              when you use the Smipay mobile app, website, and related services
-              ("Services").
+              Smipay (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is
+              committed to protecting your personal information and respecting
+              your privacy. This Privacy Policy explains how we collect, use,
+              store, and protect your data when you use the Smipay mobile app,
+              website, and related services (&quot;Services&quot;).
             </p>
             <p className="text-brand-text-secondary leading-relaxed mt-3">
               By using Smipay, you agree to the practices described in this
@@ -242,7 +242,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <h2 className="text-2xl font-bold text-brand-text-primary mt-8 mb-4">
-              Children's Privacy
+              Children&apos;s Privacy
             </h2>
             <p className="text-brand-text-secondary leading-relaxed">
               Smipay does not knowingly collect information from individuals

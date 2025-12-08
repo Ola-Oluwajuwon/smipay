@@ -10,7 +10,7 @@ export default function CookiesPolicyPage() {
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden">
         {/* Desktop Banner */}
-        <div className="hidden md:block relative h-[240px] w-full">
+        <div className="hidden md:block relative h-60 w-full">
           <Image
             src="/svgs/heros/policy-banner.svg"
             alt="Cookies Policy Banner"
