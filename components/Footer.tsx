@@ -54,13 +54,13 @@ export default function Footer() {
               </Link>
             </div>
             <div className="space-y-3">
-              <Link href="#" className="block hover:opacity-90">
+              <Link href="/terms" className="block hover:opacity-90">
                 Terms of service
               </Link>
-              <Link href="#" className="block hover:opacity-90">
+              <Link href="/privacy" className="block hover:opacity-90">
                 Privacy policy
               </Link>
-              <Link href="#" className="block hover:opacity-90">
+              <Link href="/cookies" className="block hover:opacity-90">
                 Cookies policy
               </Link>
             </div>
@@ -93,13 +93,13 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-              <Link href="#" className="hover:opacity-90">
+              <Link href="/terms" className="hover:opacity-90">
                 Terms of service
               </Link>
-              <Link href="#" className="hover:opacity-90">
+              <Link href="/privacy" className="hover:opacity-90">
                 Privacy policy
               </Link>
-              <Link href="#" className="hover:opacity-90">
+              <Link href="/cookies" className="hover:opacity-90">
                 Cookies policy
               </Link>
             </div>
